@@ -1,0 +1,50 @@
+﻿@model IEnumerable<u22710362_Practical2.Models.Person>
+
+@{
+    ViewBag.Title = "PersonList";
+}
+<link href="../Content/Site.css" rel="stylesheet"/>
+
+<h2>List of People</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsAlive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.myLink)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsAlive)
+        </td>
+        <td>
+            <a href="@Url.Content(item.myLink)">Link</a>
+        </td>
+    </tr>
+}
+
+</table>
